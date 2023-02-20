@@ -1,0 +1,47 @@
+#CRUD commands
+kubectl create deployment NAME --image=(Image NAme)
+kubectl create deployment nginx-depl --image=nginx
+
+kubectl edit deployment (deployment name)
+kubectl delete deployment (Name)
+kubectl delete pod (Name)
+##Status of different K8s componets
+kubectl get node | pod | replicaset | deployment | service
+
+
+https://www.tutorialspoint.com/kubernetes/kubernetes_setup.htm
+##Debugging pods 
+log to console => kubectl logs [pod name]
+Get interactive terminial => kubectl exec -it [pod name] --bin/bash
+kubectl describe pod (pod name)
+
+#Use configurtion file for CRDU
+apply a configuraiton file => kubectl apply -f [file name]
+delete with configuration file => kubectl delete -f [file name]
+
+#start two node cluster in minikube
+minikube start --nodes 2 -p multinode-demo
+
+#list service in minikube
+minikube service list
+
+#print yaml format     => kubect get deployment (Name) -o yaml or json
+#create namespace      => kubectl create namespace mem-example
+#namespace list        => kubectl get namespace
+#ping to 	       => minikube ssh -- ping -c 4 google.com 
+#minikube ssh -- cat /etc/resolv.conf
+#=kubectl describe deploy/coredns -n kube-system 
+#minikube ssh -- cat /etc/resolv.conf
+#Minikube Profile#
+#minikube profile list =>   minikube profile list
+#profile change        =>   minikube profile (profile name)
+#profile delete        =>   minikube delete -p (profile name)
+#create Note port      =>   kc expose pod (Name) --type=NodePort --port=80
+#minikube node add     => minikube node add --worker=true
+#minikube node delete  => minikube node delete (node name) 
+#list of node 	       => minikube node list 	
+#scale up pod          => kc scale deployment (Name) --replicas=5
+
+
+#Port Forwarding form Localhost
+kubectl port-forward --address 0.0.0.0 services/nginx 8081:443
