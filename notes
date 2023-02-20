@@ -46,4 +46,5 @@ minikube service list
 #Port Forwarding form Localhost
 kubectl port-forward --address 0.0.0.0 services/nginx 8081:443
 
-#Git push to remote repo===>> git remote set-url origin https://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@github.com/mm-kelvin97/first-repo.git
+##git commit remotely##  ==>  git remote set-url origin https://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@github.com/mm-kelvin97/first-repo.git
+
